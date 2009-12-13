@@ -1,1 +1,15 @@
-So far this repository includes the tango icon theme set (public domain) and the tigris style library (Apache license).
+Summary
+=======
+
+The icon-library-mirrors repository is for free and open source or public domain icon and user interface libraries.
+
+So far it includes the tango icon theme set (public domain) and the tigris style library (Apache license).
+
+The docunext-webapp-icons are a subset of the libraries that I have selected and categorized as potentially being useful for web applications.
+
+
+Original Sites
+--------------
+
+* <http://tango.freedesktop.org/Tango_Desktop_Project>
+* <http://style.tigris.org/>
