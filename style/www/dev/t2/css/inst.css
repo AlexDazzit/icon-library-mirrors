@@ -1,0 +1,102 @@
+/* $Id: inst.css,v 1.8 2003/06/12 23:12:36 tfahrner Exp $
+
+This file contains rules that extend or override the more basic formatting defined in tigris.css. Edit it to customize the look of applications using tigris.css (instances). You are responsible for maintaining your own set of (optional) deltas from tigris.css defaults; this file is intended as an example.
+
+*/
+
+/* colors, backgrounds, borders, link indication */
+/*
+#cn {
+	background-image: url(../images/corporate_logo.gif);
+	display: block;
+	height: 17px;
+	width: 138px; 
+}
+#sc {
+	background-image: url(../images/product_logo.gif);
+	display: block;
+	height: 25px;
+	width: 138px;
+}
+#poweredby {
+	background-image: url(../images/poweredby_036.gif);
+	display: block;
+	height: 38px;
+	width: 102px;
+}
+
+
+.app h3, .app h4 { color: #036} */
+
+body #banner td a {
+	color: #fff !important;
+}
+
+#banner {
+	border-top: 1px solid #369;
+}
+
+#banner, #toptabs {
+	background-image: url(../images/agua.jpg);
+	background-repeat: repeat;
+	background-color: #efefef
+}
+#toptabs { border-bottom: 4px solid #ddd }
+#mytools dt, #projecttools dt, #admintools dt, #communitytools dt {
+	background-color: #ddd;
+	border: none;
+}
+
+#mytools dd, #projecttools dd, #admintools dd, #communitytools dd {
+	background-color: #fff;
+	border-right: none;
+	border-bottom: none;
+	border-top: 1px solid #999;
+}
+
+#mytools, #projecttools, #admintools, #communitytools {
+	background-color: #ddd;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+
+#helptext {
+	background-color: #ffc;
+}
+
+#helptext dt {
+	border-bottom: 1px solid #996;
+	border-right: 1px solid #996;
+	background-color: #cc9;
+}
+
+#helptext dd {
+	border-bottom: 1px solid #cc9;
+	border-right: 1px solid #cc9;
+}
+
+#login a:link, #login a:visited {
+	color: white;
+	text-decoration: underline;
+}
+
+#banner a:active, #banner a:hover {
+	color: #f90 !important;
+}
+
+/* font and text properties, exclusive of link indication, alignment, text-indent */
+#bodycol h1 {
+	font-family: Tahoma, Verdana, Helvetica, Arial, sans-serif;
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+/* box properties (exclusive of borders), positioning, alignments, list types, text-indent */
+#toptabs {
+	margin: 0;
+	padding-top: .67em;
+	padding-left: 8px;
+}
+
+#poweredby { float: left; height: 38px; width: 102px; background: url(../images/poweredby_036.gif) no-repeat; margin: 0 8px 100px 0; border-bottom: none }
+#footer { padding: 8px }

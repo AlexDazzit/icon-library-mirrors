@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
+"http://style.tigris.org/tigris_transitional.dtd">
+
+<html>
+ <head>
+<style type="text/css">
+ /* <![CDATA[ */
+ 
+ @import url(http://style.tigris.org/dev/css/tigris.css);
+
+
+/* ]]> */
+</style>
+
+  <title>foo</title>
+ </head>
+
+ <body>
+<div class="h3">
+  <h3>Icon usage in Tigris</h3>
+
+  <p>The techniques shown here (view source) make no use of the <code>img</code> tag, keeping verbose details like height, width, spacing, border treatments, and pathname of images out of HTML and in the style system, where they can be managed most cleanly. Beat the rush and retire <code>img</code> before XHTML 2 scraps it formally.</p>
+
+<div class="h4">
+  <h4>Two styles of tree browser</h4>
+
+  <p>In this first group of 4, the icon and text are integral (same link or other element). CVSWeb's UI works this way.</p>
+
+  <div class="filebrowse">
+   <p><a href="foo" class="leaf">filebrowse leaf</a></p>
+
+   <p><a href="foo" class="leafnode">filebrowse leafnode/</a></p>
+
+   <p><a href="foo" class="expanded">filebrowse expanded/</a></p>
+
+   <p><a href="foo" class="collapsed">filebrowse collapsed/</a></p>
+  </div>
+
+  <p class="stb">In this second group, the icon and text are separate links, with the icon having a textual fallback (for Nav4 and other special cases). Nidaba (file-sharing component of SourceCast) works this way.</p>
+
+  <div class="filebrowse-alt">
+   <p><a href="foo" class="leaf"><span class="alt">[file]</span></a> <a href="bar">filebrowse-alt leaf</a></p>
+
+   <p><a href="foo" class="leafnode"><span class="alt">/</span></a> <a href="bar">filebrowse-alt leafnode</a></p>
+
+   <p><a href="foo" class="expanded"><span class="alt">/-</span></a> <a href="bar">filebrowse-alt expanded</a></p>
+
+   <p><a href="foo" class="collapsed"><span class="alt">/+</span></a> <a href="bar">filebrowse-alt collapsed</a></p>
+  </div>
+
+  <p>There are more kinds of trees. Above is a directory tree. The approach lends itself easily to other kinds of trees; just change the class of the parent from "filebrowse" to something else and supply appropriate icons. The markup remains the same.</p>
+  <!--
+  [[div class="userbrowse"]] 
+  [[p]]
+  [[a href="foo" class="leaf"]]userbrowse leaf[[/a]]
+  [[/p]]
+
+  [[p]]
+  [[a href="foo" class="leafnode"]]userbrowse leafnode/[[/a]]
+  [[/p]]
+
+  [[p]]
+  [[a href="foo" class="expanded"]]userbrowse expanded/[[/a]]
+  [[/p]]
+
+  [[p]]
+  [[a href="foo" class="collapsed"]]userbrowse collapsed/[[/a]]
+  [[/p]]
+  [[/div]]
+  -->
+
+  <p>To represent logical nesting, use ul/li:</p>
+
+  <ul class="filebrowse">
+   <li>
+    <a href="foo" class="expanded">filebrowse expanded/</a> 
+
+    <ul>
+     <li><a href="foo" class="leaf">filebrowse leaf</a></li>
+
+     <li><a href="foo" class="leaf">filebrowse leaf</a></li>
+    </ul>
+   </li>
+
+   <li>
+    <a href="foo" class="expanded">filebrowse expanded/</a> 
+
+    <ul>
+     <li>
+      <a href="foo" class="expanded">filebrowse expanded/</a> 
+
+      <ul>
+       <li><a href="foo" class="leaf">filebrowse leaf</a></li>
+      </ul>
+     </li>
+
+     <li><a href="foo" class="collapsed">filebrowse collapsed/</a></li>
+    </ul>
+   </li>
+  </ul>
+
+  <p>When it isn't possible actually to nest the markup (e.g., when tree must be smooshed across multiple table rows), use the tier<var>n</var> classes on the containing blocks. The table below also shows (nonsensical) usage for sortable columns - note arrow widgets in table headings:</p>
+
+  <table width="100%" cellpadding="3" cellspacing="2" class="filebrowse-alt">
+   <tr>
+    <th>Select</th>
+
+    <th>Name</th>
+
+    <th>Files</th>
+
+    <th>Reserved by</th>
+
+    <th><a href="foo" class="sortup"><span class="alt">[sort up]</span> Last modified</a></th>
+
+    <th><a href="foo" class="sortdown"><span class="alt">[sort down]</span> Creation date</a></th>
+   </tr>
+
+   <tr class="a">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier1">
+      <a href="#" class="collapsedwaste" title="collapse"><span class="alt">[-] waste/</span></a> <a href="#" title="view details">Trash</a>
+     </div>
+    </td>
+
+    <td>0</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="b">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier1">
+      <a href="#" class="expanded" title="collapse"><span class="alt">[-] /</span></a> <a href="#" title="view details">User Docs</a>
+     </div>
+    </td>
+
+    <td>0</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="a">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier2">
+      <a href="#" class="collapsed" title="expand"><span class="alt">[+] /</span></a> <a href="#" title="view details">Installation Guides</a>
+     </div>
+    </td>
+
+    <td>3</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="b">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier2">
+      <a href="#" class="collapsed" title="expand"><span class="alt">[+] /</span></a> <a href="#" title="view details">User Manual</a>
+     </div>
+    </td>
+
+    <td>4</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="a">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier2">
+      <a href="#" class="collapsed" title="expand"><span class="alt">[+] /</span></a> <a href="#" title="view details">HOWTOs</a>
+     </div>
+    </td>
+
+    <td>8</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="b">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier1">
+      <a href="#" class="expanded" title="collapse"><span class="alt">[-] /</span></a> <a href="drill-detail2.html" title="view details">Releases</a>
+     </div>
+    </td>
+
+    <td>0</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="a">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier2">
+      <a href="#" class="expanded" title="collapse"><span class="alt">[-] /</span></a> <a href="drill-detail.html" title="view details">Stable releases</a>
+     </div>
+    </td>
+
+    <td>2</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="b">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier3">
+      <a href="#" class="collapsed" title="expand"><span class="alt">[+] /</span></a> <a href="#" title="view details">2.0.0</a>
+     </div>
+    </td>
+
+    <td>18</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="a">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier3">
+      <a href="#" class="collapsed" title="expand"><span class="alt">[+] /</span></a> <a href="#" title="view details">1.2.5</a>
+     </div>
+    </td>
+
+    <td>12</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="b">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier3">
+      <a href="#" class="leaf" title="download"><span class="alt">[download]</span></a> <a href="#" title="view details">snapshot-12302.tar</a>
+     </div>
+    </td>
+
+    <td>--</td>
+
+    <td>username</td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="a">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier3">
+      <a href="#" class="leaf" title="download"><span class="alt">[download]</span></a> <a href="#" title="view details">snapshot-12402.tar</a>
+     </div>
+    </td>
+
+    <td>--</td>
+
+    <td>username</td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="b">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier2">
+      <a href="#" class="expanded" title="collapse"><span class="alt">[-] /</span></a> <a href="#" title="view details">Developer Releases</a>
+     </div>
+    </td>
+
+    <td>0</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="a">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier3">
+      <a href="#" class="collapsed" title="expand"><span class="alt">[+] /</span></a> <a href="#" title="view details">2.0.0TR15</a>
+     </div>
+    </td>
+
+    <td>16</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+
+   <tr class="b">
+    <td><input type="checkbox" /></td>
+
+    <td>
+     <div class="tier3">
+      <a href="#" class="collapsed" title="expand"><span class="alt">[+] /</span></a> <a href="#" title="view details">1.2.3</a>
+     </div>
+    </td>
+
+    <td>9</td>
+
+    <td>
+    </td>
+
+    <td>3/28/2002</td>
+
+    <td>username</td>
+   </tr>
+  </table>
+</div>
+
+<div class="h4">
+  <h4>Messaging</h4>
+
+  <p>The usages above show linked icons with textual fallbacks, suitable for use as widgets. Simpler cases follow, where the image is essentially decorative, inactive, and amplifies a textual message.</p>
+
+  <div class="errormessage">
+   <p><strong>Dude[tte]! That's not right!</strong></p>
+   <p>In which we throw in another line to conceal a limitation in lesser browsers whereby the icon will be cut off if the associated text isn't tall enough. Use at least 2 lines to avoid. Or use Mozilla.</p>
+  </div>
+
+  <p class="errormark">This seems to be about where you messed up. You can put this class on a table cell to mark it, f'rinstance.</p>
+
+  <div class="warningmessage">
+   <p><strong>Dude[tte]? Are you really sure about this?</strong></p>
+
+   <p>What I'm saying is that you can't undo this once it's done, so be careful ok?</p>
+
+   <p><input type="submit" name="cancel" value="Cancel" /> <input type="submit" name="cancel" value="Do it" /></p>
+  </div>
+
+  <p class="warningmark"><strong>Core temperature approaching 11.</strong></p>
+
+  <div class="donemessage">
+   <p><strong>Dude[tte]! It worked!</strong></p>
+
+   <p>Species 834196b scheduled for termination. So long!</p>
+  </div>
+
+  <p class="donemark">Excellent.</p>
+
+  <div class="docinfo">
+   <p>This is all about the document.</p>
+
+   <p>It was modified at some time or another.</p>
+  </div>
+
+  <div class="dirinfo">
+   <p>This is all about the directory.</p>
+
+   <p>It was modified at some time or another.</p>
+  </div>
+</div>
+</div>
+ </body>
+</html>
+
+

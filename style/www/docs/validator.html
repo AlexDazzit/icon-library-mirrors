@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
+"http://style.tigris.org/nonav/tigris_transitional.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>ISO-8879 Markup Validator</title>
+  <meta name="robots" content="noindex" />
+<style type="text/css">
+/* <![CDATA[ */ @import "http://www.w3.org/StyleSheets/Core/Chocolate"; 
+body { margin: 2em }
+/* ]]> */
+
+</style>
+</head>
+
+ <body>
+  <h1>ISO-8879 Markup Validator</h1>
+  <!--
+    [[p]]The most convenient way to validate is by feeding the validator the URL of your document. This implies that you edit your work directly on the Web, or can get it there conveniently. If your environment permits this (it should!) stick this link in the body of documents to be edited:[[/p]]
+
+    [[p class="stb"]]&lt;p&gt;&lt;a href="http://www.htmlhelp.com/cgi-bin/validate.cgi?url=referer&amp;amp;input=yes&amp;amp;xml=yes"&gt;validate me&lt;/a&gt;&lt;/p&gt;[[/p]]
+
+    [[p class="stb"]]Then surf (http:///, not file:///) to your document and follow the link to sick the validator on it. You can of course suppress this element once you're done editing. There is an example at the bottom of this document.[[/p]]
+
+    [[p]]If you [[em]]can't[[/em]] edit your work on the Web, then you can use either of the validator interfaces available below. These forms submit to the validator hosted at [[a href="http://www.htmlhelp.com/tools/validator/"]]HTMLHelp[[/a]].[[/p]]
+  -->
+
+  <p>These forms submit to the validator hosted at <a href="http://www.htmlhelp.com/tools/validator/">HTMLHelp</a>. This package, like the <a href="http://validator.w3.org/">W3C's HTML validation service</a>, uses James Clark's SP validating parser</p>
+
+  <form action="http://www.htmlhelp.com/cgi-bin/validate.cgi" method="post" enctype="multipart/form-data">
+   <h2>Either</h2>
+
+   <p><label accesskey="u">Select a markup document from your computer to be uploaded for validation: <input type="file" name="file" accept="text/html" /></label></p>
+
+   <p><label accesskey="i"><input type="checkbox" name="input" value="yes" checked="checked" />Show input</label></p>
+
+   <p><label><input type="checkbox" name="xml" value="yes" checked="checked" />Use XML parser</label></p>
+
+   <p><label accesskey="V"><input type="submit" value="Validate it!" /></label></p>
+  </form>
+
+  <h2>Or</h2>
+
+  <form action="http://www.htmlhelp.com/cgi-bin/validate.cgi" method="post">
+   <p><label accesskey="H" for="area">Enter or edit the markup to be validated below.</label></p>
+
+   <p><textarea name="area" id="area" rows="30" cols="80">
+&lt;!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
+  "http://style.tigris.org/nonav/tigris_transitional.dtd"&gt;
+  
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Your Ad Here&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+              
+      
+   </textarea></p>
+
+   <p><label accesskey="i"><input type="checkbox" name="input" value="yes" checked="checked" />Show input</label></p>
+
+   <p><label><input type="checkbox" name="xml" value="yes" checked="checked" />Use XML parser</label></p>
+
+   <p><label accesskey="V"><input type="submit" value="Validate it!" /></label> <label accesskey="C"><input type="reset" value="Clear form" /></label></p>
+  </form>
+
+  <h2>Or</h2>
+
+  <form action="http://www.htmlhelp.com/cgi-bin/validate.cgi" method="post">
+   <p>Enter one or more URLs of markup documents. Separate your URLs by new lines.<p>
+    
+   <p><textarea name="urls" rows="8" cols="60"></textarea></p>
+
+   <p><label accesskey="i"><input type="checkbox" name="input" value="yes" checked="checked" />Show input</label></p>
+
+   <p><label><input type="checkbox" name="xml" value="yes" checked="checked" />Use XML parser</label></p>
+
+   <p><label accesskey="V"><input type="submit" value="Validate it!" /></label> <label accesskey="C"><input type="reset" value="Clear form" /></label></p>
+   <br />
+   <br />
+  </form>
+
+  <h2>Helpful reading</h2>
+
+  <ul>
+   <li><a href="http://pantos.org/atw/h-valid.html">Understanding HTML Validation</a></li>
+
+   <li><a href="http://pantos.org/atw/h-style.html">Extending Validators</a></li>
+
+   <li><a href="http://www.westciv.com/style_master/house/good_oil/validating/index.html">Validation: the key to better style sheet support</a></li>
+
+   <li><a href="http://www.htmlhelp.com/tools/validator/customdtd.html">Using a Custom DTD</a></li>
+
+   <li><a href="http://www.w3.org/TR/html401/intro/sgmltut.html">On SGML and HTML</a> from the W3C HTML 4.01 Specification. See also <a href="http://www.w3.org/TR/html401/intro/sgmltut.html#h-3.3">How to Read the HTML DTD</a>.</li>
+  </ul>
+
+  <h2>Differences between W3C Transitional and Tigris Transitional Document Type Definitions</h2>
+
+  <h3>Optional in W3C, required in Tigris</h3>
+
+  <ul>
+   <li>Height and width attributes are required on img.</li>
+
+   <li>The border, cellspacing, and cellpadding attributes are required on table.</li>
+
+   <li>The body element may contain only block-level elements, as in HTML Strict. This encourages the use of appropriate containers for all text, which in turn aids selection in CSS.</li>
+  </ul>
+
+  <h3>Optional in W3C, disallowed in Tigris</h3>
+
+  <ul>
+   <li>The br element is not permitted in contexts where block-level elements may occur, to discourage abuse of br as a substitute for structural elements and/or CSS box model properties.</li>
+
+   <li>The background, bgcolor, text, link, vlink, and alink attributes have been removed, as redundant with CSS.</li>
+
+   <li>The align attributes have been removed except on block elements, as redundant with CSS's text-align properties (which apply only to inline content, hence retention of the usage on blocks).</li>
+
+   <li>The center element has been removed, as redundant with div align='center'.</li>
+
+   <li>The valign attribute has been removed, as redundant with CSS's vertical-align property.</li>
+
+   <li>The menu and dir elements have been removed, as redundant with ul, and deprecated.</li>
+
+   <li>The font and basefont elements have been removed, as redundant with CSS's font-family, font-size, and color properties, as well as with the big and small elements.</li>
+  </ul>
+
+  <h3>Disallowed in W3C, permitted in Tigris</h3>
+
+  <ul>
+   <li>The height attribute has been added to table.</li>
+
+   <li>The wrap attribute has been added to textarea.</li>
+
+   <li>The border attribute has been added to input.</li>
+
+   <li>The marginwidth and marginheight attributes for body have been added because the Netscape 4.x development team elected to implement these proprietary attributes instead of the earlier formulated CSS equivalents.</li>
+  </ul>
+
+  <h2>W3C HTML DOCTYPEs for reference:</h2>
+
+  <ul>
+   <li>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"<br />
+    &#160;&#160;&#160;"http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-strict.dtd"&gt;</li>
+
+   <li>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"<br />
+    &#160;&#160;&#160;"http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-transitional.dtd"&gt;</li>
+
+   <li>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"<br />
+    &#160;&#160;&#160;"http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd"&gt;</li>
+
+   <li>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"<br />
+    &#160;&#160;&#160;"http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd"&gt;</li>
+
+   <li>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"<br />
+    &#160;&#160;&#160;"http://www.w3.org/MarkUp/Wilbur/HTML32.dtd"&gt;</li>
+  </ul>
+
+  <p class="mtb"><a href="http://www.htmlhelp.com/cgi-bin/validate.cgi?url=referer&amp;input=yes&amp;xml=yes">validate me</a></p>
+ </body>
+</html>
+
+

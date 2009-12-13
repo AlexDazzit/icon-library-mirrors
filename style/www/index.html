@@ -1,0 +1,89 @@
+<p>
+This project came about in March 2002 when developers from the <a
+href="http://jakarta.apache.org/turbine/">Turbine</a> project
+appropriated the CSS and HTML templates already in use by <a
+href="http://scarab.tigris.org/">Scarab</a> and <a
+href="http://eyebrowse.tigris.org/">Eyebrowse</a>, which in turn are
+developed at CollabNet for its <a
+href="http://www.collab.net/products/sourcecast/">SourceCast</a>
+product, a collaborative development environment built around <a
+href="http://www.tigris.org/">Tigris</a> and <a
+href="http://jakarta.apache.org/">Jakarta</a> technologies. The fact
+that several projects were using the same resources suggested that a
+formal sharing arrangement would be a good idea, in replacement of the
+ad-hoc copying and manual synchronization that had previously
+prevailed even among the CollabNet-sponsored projects.
+</p>
+
+<p>The latest stable CSS and image assets are available through the <a href="/servlets/ProjectDocumentList">File sharing</a> component. The following items demonstrate their application as a layered system:</p> 
+
+<ol>
+	<li><a href="/nonav/docs/sampler.html">HTML usage sampler</a> (simple HTML only)</li>
+	<li><a href="/nonav/docs/sampler_tigris.html">Sampler with base</a> (Tigris and print) stylesheets applied</li>
+	<li><a href="/nonav/docs/sampler_inst.html">Sampler with Tigris and instance-specific extensions (inst.css)</a></li>
+</ol>
+
+<p>The HTML of all these examples is identical; the delta is all CSS. View source of the usage sampler to learn how to exploit the stylesheets fully. Of course, it takes a while to figure out how not to break things, and more to really make things sing. That's what the mailing lists are for. If you're new to CSS, there are some introductory resources listed a <a href="http://style.tigris.org/servlets/ReadMsg?list=users&msgNo=3">mailing list message</a>.
+</p>
+
+<p>
+<a href="/nonav/dev/t2/docs/sampler_inst.html">Work in development</a> - not stable - is staged separately. A major emphasis of work in development is to attain W3C XHTML Strict conformance, retiring many workarounds deployed in earlier versions to prop up Netscape 4.x.
+</p>
+
+
+<h3>Goals and antigoals</h3>
+<p>
+The HTML and CSS system put forth here was designed to meet the following goals, and has evidently succeeded well enough to be copied:
+</p>
+
+<ul>
+	<li>Be end-user friendly through <strong>speedy loading</strong>, consistency, and responsiveness to user prerogatives like font and window management, security settings, etc. </li>
+	<li>Play nice with older and defective user agents, while exploiting the capabilities of modern, standards-conformant UAs like Mozilla</li>
+	<li>Be accessible: conforms to all <a href="http://www.section508.gov/">Section 508</a> guidelines, and (nearly) achieves <a href="http://www.w3.org/TR/WCAG10/#Conformance">WAI Double-A conformance</a> </li>
+	<li>Be reproducible and maintainable through lean, simple, valid markup, relegating all nonessential formatting to the stylesheet</li>
+	<li>Not least: produce <strong>good looks</strong> as-is, yet remain very easy to customize extensively.</li>
+</ul>
+
+<p>
+More broadly, among the goals of this project are
+</p>
+
+<ul>
+	<li>To advance Web application user interface coding, interaction model, and accessibility standards among open-source projects through code sharing and peer review</li>
+	<li>To document, largely through the accrual of a discussion archive, usage and rationale of the stylesheet and template regime that led to creation of this project</li>
+	<li>To provide stable <a href="http://style.tigris.org/unbranded-source/browse/~checkout~/style/www/css/ns4_only.css">stylesheet hosting</a> via CVSWeb for ease of development, and also <a href="http://style.tigris.org/nonav/tigris_transitional.dtd">custom DTD hosting</a> to facilitate use of <a href="http://style.tigris.org/nonav/docs/validator.html">online validation services</a>.</li>
+</ul>
+
+
+<p>
+Not among the goals are
+</p>
+
+
+<ul>
+	<li>To promote - much less enforce - a monolithic look &amp; feel for Web applications whose developers are project members. This will be a mark of failure, though perhaps unavoidable in the beginning. The challenge is to accommodate and encourage a robust genetic diversity <em>within the species</em> - i.e. while retaining the ability to share source.  </li>
+	<li>To provide general CSS or HTML support, or a forum for discussion of Web authoring issues not closely relevant to the problem space of the source code hosted here. <a href="http://www.css-discuss.org/">css-discuss</a> and related resources are full of general CSS goodness.</li>
+	<li>To host a production stylesheet server like <a href="http://www.w3.org/StyleSheets/Core">W3C's</a>.</li>
+</ul>
+
+<h3>Owners</h3>
+
+<p>
+Daniel Rall created the project, with Todd Fahrner as co-owner. Daniel is the Java guy; Todd is the CSS/HTML guy. This makes Daniel the bigger, more generally useful fish, while Todd is the little fish with interests and skills most narrowly scoped to this project. We stand on giant fins.
+</p>
+
+<p>
+Welcome!
+</p>
+
+<p>p.s: Daniel thought this CSS terminology pointer from the dev mailing list was too important not to put on this page:</p>
+
+<pre>
+   selector { property: value }
+
+              \_declaration_/
+   \___________ rule _________/
+</pre>
+
+
+<p>There, now you don't need to say "CSS tags" ever again.</p>

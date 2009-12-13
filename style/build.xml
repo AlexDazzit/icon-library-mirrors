@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<project name="style" default="dist-tgz">
+
+  <property file="${user.home}/build.properties"/>
+  <property file="build.properties"/>
+  <property file="default.properties"/>
+
+  <target name="init-filters">
+    <filter token="STYLE_VERSION" value="${version}"/>
+  </target>
+
+  <target name="dist" depends="init-filters"
+          description="Creates the distribution">
+    <mkdir dir="${dist.css.dir}"/>
+    <mkdir dir="${dist.images.dir}"/>
+    <copy todir="${dist.css.dir}">
+      <fileset dir="${src.css.dir}" includes="*.css"/>
+    </copy>
+    <copy todir="${dist.images.dir}">
+      <fileset dir="${src.images.dir}" includes="*.gif,*.png"/>
+    </copy>
+  </target>
+
+  <target name="dist-zip" depends="dist"
+          description="Compress package as ZIP file">
+    <zip zipfile="${build.dir}/${dist.name}.zip"
+         basedir="${build.dir}" includes="${dist.name}/**"/>
+  </target>
+
+  <target name="dist-tgz" depends="dist"
+          description="Compress package as GZIP'd TAR file">
+    <tar tarfile="${build.dir}/${dist.name}.tar"
+         basedir="${build.dir}" includes="${dist.name}/**"/>
+    <gzip zipfile="${build.dir}/${dist.name}.tar.gz"
+          src="${build.dir}/${dist.name}.tar"/>
+    <delete file="${build.dir}/${dist.name}.tar"/>
+  </target>
+
+  <target name="clean" description="Removes build directory">
+    <delete dir="${build.dir}"/>
+  </target>
+</project>
